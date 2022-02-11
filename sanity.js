@@ -25,6 +25,12 @@ export const config = {
 
 export const sanityClient = createClient(config)
 
+// Set up a preview client with serverless authentication for drafts
+export const previewClient = createClient({
+  ...config,
+  token: process.env.SANITY_API_TOKEN,
+})
+
 /**
  * Set up a helper function for generating Image URLs with only the asset reference data in your documents.
  * Read more: https://www.sanity.io/docs/image-url

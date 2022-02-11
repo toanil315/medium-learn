@@ -18,4 +18,16 @@ export interface IPost {
   };
   title: string;
   body: any;
+  comment: IComment[];
+}
+
+export interface IComment {
+  _id: string;
+  comment: string;
+  email: string;
+  name: string;
+  post: {
+    _ref: string;
+    _type: "reference";
+  };
 }
